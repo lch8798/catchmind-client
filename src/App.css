@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  background-color: #eee;
+}
+
+#canvas {
+  margin: 100px auto;
+}
