@@ -76,8 +76,16 @@ class App extends Component {
       return;
     }
 
-    const drawingLocation = [e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop];
-
+    let drawingLocation = [0, 0];
+    
+    if(e.touches) {
+      // 터치
+      drawingLocation = [e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop];
+    } else {
+      // 마우스
+      drawingLocation = [e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop];
+    }
+    
     // 클라이언트 랜더링
     // picture.push(drawingLocation);
 
@@ -97,6 +105,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h4>안녕하세요 귀여운 라즈베리파이 서버입니다</h4>
         <div className="game" id="game">
           <canvas 
             id="canvas" 
@@ -106,6 +115,9 @@ class App extends Component {
             onMouseUp={this.offDraw}
             onMouseDown={this.onDraw}
             onMouseMove={this.draw}
+            onTouchStart={this.onDraw}
+            onTouchEnd={this.offDraw}
+            onTouchMove={this.draw}
           />
         </div>
         <button onClick={this.paintInit}>초기화</button>

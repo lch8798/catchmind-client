@@ -1,8 +1,17 @@
 .App {
   text-align: center;
-  background-color: #eee;
 }
 
 #canvas {
-  margin: 100px auto;
+  margin: 30px auto;
+}
+
+h4 {
+  padding-top: 30px;
+}
+
+button {
+  margin-bottom: 30px;
+  padding: 10px 50px;
+  font-weight: bold;
 }
