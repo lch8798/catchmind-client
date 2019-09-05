@@ -65,7 +65,7 @@ class App extends Component {
     const { ctx } = this.state;
     ctx.fillStyle = "black";
     picture.forEach((location) => {
-      ctx.fillRect(location[0], location[1], 3, 3);
+      ctx.fillRect(location[0], location[1], 2, 2);
     });
   }
 
@@ -85,7 +85,7 @@ class App extends Component {
       // 마우스
       drawingLocation = [e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop];
     }
-    
+
     // 클라이언트 랜더링
     // picture.push(drawingLocation);
 
@@ -106,6 +106,7 @@ class App extends Component {
     return (
       <div className="App">
         <h4>안녕하세요 귀여운 라즈베리파이 서버입니다</h4>
+        <button onClick={this.paintInit}>초기화</button>
         <div className="game" id="game">
           <canvas 
             id="canvas" 
@@ -120,7 +121,6 @@ class App extends Component {
             onTouchMove={this.draw}
           />
         </div>
-        <button onClick={this.paintInit}>초기화</button>
       </div>
     );
   }

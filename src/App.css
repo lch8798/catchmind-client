@@ -1,17 +1,19 @@
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 #canvas {
-  margin: 30px auto;
+  margin: 10px auto;
 }
 
 h4 {
-  padding-top: 30px;
+  font-size: 12px;
+  padding: 10px 0;
 }
 
 button {
-  margin-bottom: 30px;
-  padding: 10px 50px;
+  padding: 5px 20px;
   font-weight: bold;
+  font-size: 10px;
 }

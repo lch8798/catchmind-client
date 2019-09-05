@@ -1,6 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none; 
+  -khtml-user-select: none; 
+  user-select:none;
 }
 
 body {
@@ -11,6 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #eee;
+  overflow: hidden;
 }
 
 code {
