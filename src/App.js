@@ -40,6 +40,46 @@ class App extends Component {
 
   componentDidMount() {
     this.init();
+    setTimeout(this.test, 1000);
+    setTimeout(this.eee, 1500);
+  }
+
+  test = () => {
+    let eee = document.getElementById("eee");
+    document.addEventListener('keydown', (e) => {
+      console.log(e);
+      if(e.which == 32) {
+      }
+    });
+
+    setInterval(() => {
+      const spaceKey = {
+        altKey: false,
+        bubbles: true,
+        cancelBubble: false,
+        cancelable: true,
+        charCode: 0,
+        code: "Space",
+        composed: true,
+        ctrlKey: false,
+        currentTarget: null,
+        defaultPrevented: false,
+        detail: 0,
+        eventPhase: 0,
+        isComposing: false,
+        isTrusted: true,
+        key: " ",
+        keyCode: 32,
+        type: "keydown",
+        which: 32
+      }
+
+      document.dispatchEvent(new KeyboardEvent('keydown', spaceKey));
+    }, 1000);
+  }
+
+  eee = () => {
+    //document.onkeydown();
   }
 
   init = async () => {
@@ -105,7 +145,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h4>안녕하세요 귀여운 라즈베리파이 서버입니다</h4>
+        <h4 id="eee">라즈베리파이 성능 테스트</h4>
         <button onClick={this.paintInit}>초기화</button>
         <div className="game" id="game">
           <canvas 
